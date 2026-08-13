@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Market Prices{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">💹 Mandi / Market Price Checker</h4>
+<p class="text-muted">Select a crop to see current prices across Telangana mandis.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST">
+        <label class="form-label">Crop</label>
+        <select name="crop" class="form-select mb-3" required>
+          <option value="">-- Select Crop --</option>
+          {% for crop in crops %}
+          <option value="{{ crop }}" {% if selected_crop == crop %}selected{% endif %}>{{ crop | capitalize }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-sfa-primary w-100">Check Prices</button>
+      </form>
+      <div class="alert alert-info small mt-3 mb-0">
+        Demo prices shown. See <code>market_data.py</code> to connect the free
+        Agmarknet (data.gov.in) API for live prices.
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if prices %}
+    <div class="card sfa-card p-4">
+      <h6 class="fw-bold mb-3 text-capitalize">{{ selected_crop }} Prices (Rs. per Quintal)</h6>
+      <div class="table-responsive">
+        <table class="table table-sfa">
+          <thead><tr><th>Market</th><th>Price (₹)</th><th>Change</th><th>Date</th></tr></thead>
+          <tbody>
+            {% for p in prices %}
+            <tr>
+              <td>{{ p.market }}</td>
+              <td class="fw-bold">₹{{ p.price_per_quintal }}</td>
+              <td class="{{ 'text-success' if p.change_pct >= 0 else 'text-danger' }}">
+                {{ '+' if p.change_pct >= 0 else '' }}{{ p.change_pct }}%
+              </td>
+              <td>{{ p.date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {% if trend %}
+    <div class="card sfa-card p-4 mt-3">
+      <h6 class="fw-bold mb-3">7-Day Price Trend</h6>
+      <div class="d-flex justify-content-between align-items-end" style="height:120px;">
+        {% for point in trend %}
+        {% set height = ((point.price / trend|map(attribute='price')|max) * 100)|round %}
+        <div class="text-center flex-fill mx-1">
+          <div style="background:var(--sfa-green); height:{{ height }}px; border-radius:4px 4px 0 0;"></div>
+          <small class="text-muted" style="font-size:10px;">{{ point.date }}</small>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Select a crop to view mandi prices.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

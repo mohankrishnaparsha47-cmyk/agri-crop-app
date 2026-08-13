@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Weather Updates{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">☀️ Weather Updates</h4>
+
+<div class="card sfa-card p-4 mb-3">
+  <h6 class="text-muted">{{ weather.location }}</h6>
+  <h1 class="fw-bold" style="color: var(--sfa-green);">{{ weather.temperature }}°C</h1>
+  <p class="mb-1">{{ weather.condition }}</p>
+  <div class="row mt-3">
+    <div class="col-4"><small class="text-muted">Humidity</small><p class="fw-bold mb-0">{{ weather.humidity }}%</p></div>
+    <div class="col-4"><small class="text-muted">Rain Chance</small><p class="fw-bold mb-0">{{ weather.rainfall_chance }}</p></div>
+    <div class="col-4"><small class="text-muted">Wind</small><p class="fw-bold mb-0">{{ weather.wind_speed }}</p></div>
+  </div>
+</div>
+
+<div class="card sfa-card p-4">
+  <h6 class="fw-bold mb-3">3-Day Forecast</h6>
+  <div class="row text-center">
+    {% for f in weather.forecast %}
+    <div class="col-4">
+      <p class="mb-1 fw-bold">{{ f.day }}</p>
+      <p class="mb-1">{{ f.temp }}°C</p>
+      <small class="text-muted">{{ f.condition }}</small>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="alert alert-info mt-3 small">
+  Demo weather data shown. To enable live weather, add your free OpenWeatherMap API key in <code>app.py</code> → <code>weather()</code> route.
+</div>
+{% endblock %}

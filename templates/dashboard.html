@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Smart Farmer Assistant{% endblock %}
+{% block content %}
+
+<div class="dashboard-hero">
+  <h2 class="fw-bold">Good Morning, {{ logged_in_user['name'] }}! 👋</h2>
+  <p class="mb-0">Let's make today productive.</p>
+</div>
+
+<h4 class="fw-bold mb-3">Dashboard</h4>
+<div class="row g-3">
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('crop_suggestion') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-green mx-auto">🌱</div>
+        <h6 class="fw-bold mb-0">Crop Suggestions</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('weather') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-blue mx-auto">☀️</div>
+        <h6 class="fw-bold mb-0">Weather Updates</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('fertilizer') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-brown mx-auto">🧪</div>
+        <h6 class="fw-bold mb-0">Fertilizer Recommendations</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('irrigation') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-purple mx-auto">💧</div>
+        <h6 class="fw-bold mb-0">Irrigation Alerts</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('field_records') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-orange mx-auto">📋</div>
+        <h6 class="fw-bold mb-0">Field Records</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('schemes') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-teal mx-auto">🏛️</div>
+        <h6 class="fw-bold mb-0">Farmer Subsidy &amp; Schemes</h6>
+        <span class="badge bg-danger mt-1" style="font-size:10px;">NEW</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('soil_info') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-brown mx-auto">🟫</div>
+        <h6 class="fw-bold mb-0">Soil Information</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('my_applications') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-green mx-auto">📄</div>
+        <h6 class="fw-bold mb-0">My Applications</h6>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('market_prices') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-blue mx-auto">💹</div>
+        <h6 class="fw-bold mb-0">Market Prices</h6>
+        <span class="badge bg-danger mt-1" style="font-size:10px;">NEW</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('profit_calculator_route') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-teal mx-auto">💰</div>
+        <h6 class="fw-bold mb-0">Profit Calculator</h6>
+        <span class="badge bg-danger mt-1" style="font-size:10px;">NEW</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-6 col-md-3">
+    <a href="{{ url_for('pest_detection_route') }}" class="text-decoration-none">
+      <div class="card sfa-card text-center p-3">
+        <div class="sfa-icon-circle bg-icon-purple mx-auto">🐛</div>
+        <h6 class="fw-bold mb-0">Pest &amp; Disease Detection</h6>
+        <span class="badge bg-danger mt-1" style="font-size:10px;">NEW</span>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<div class="row mt-4 g-3">
+  <div class="col-12">
+    <div class="card sfa-card p-3">
+      <h6 class="fw-bold">Benefits</h6>
+      <div class="row text-center">
+        <div class="col-3"><small>📈 Improves Crop Yield</small></div>
+        <div class="col-3"><small>💧 Saves Water &amp; Time</small></div>
+        <div class="col-3"><small>₹ Reduces Costs</small></div>
+        <div class="col-3"><small>🌱 Supports Smart Farming</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

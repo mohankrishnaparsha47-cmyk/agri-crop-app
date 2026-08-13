@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Field Records{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">📋 Field Records</h4>
+<p class="text-muted">Track your field activities to improve productivity.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <h6 class="fw-bold mb-3">Add New Record</h6>
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Crop</label>
+          <select name="crop_name" class="form-select" required>
+            <option value="">-- Select Crop --</option>
+            {% for crop in crops %}
+            <option value="{{ crop }}">{{ crop | capitalize }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Activity</label>
+          <select name="activity" class="form-select" required>
+            <option value="Sowing">Sowing</option>
+            <option value="Fertilizer Applied">Fertilizer Applied</option>
+            <option value="Irrigation">Irrigation</option>
+            <option value="Pest Control">Pest Control</option>
+            <option value="Weeding">Weeding</option>
+            <option value="Harvest">Harvest</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input type="date" name="activity_date" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Notes</label>
+          <textarea name="notes" class="form-control" rows="2" placeholder="Optional notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-sfa-primary w-100">Add Record</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <div class="card sfa-card p-4">
+      <h6 class="fw-bold mb-3">Your Records</h6>
+      {% if records %}
+      <div class="table-responsive">
+        <table class="table table-sfa">
+          <thead>
+            <tr><th>Date</th><th>Crop</th><th>Activity</th><th>Notes</th><th></th></tr>
+          </thead>
+          <tbody>
+            {% for r in records %}
+            <tr>
+              <td>{{ r['activity_date'] }}</td>
+              <td class="text-capitalize">{{ r['crop_name'] }}</td>
+              <td>{{ r['activity'] }}</td>
+              <td>{{ r['notes'] }}</td>
+              <td>
+                <a href="{{ url_for('delete_field_record', record_id=r['id']) }}"
+                   class="btn btn-sm btn-outline-danger"
+                   onclick="return confirm('Delete this record?');">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="text-muted mb-0">No records yet. Add your first field activity.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

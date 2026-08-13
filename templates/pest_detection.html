@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Pest & Disease Detection{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">🐛 Pest &amp; Disease Detection</h4>
+<p class="text-muted">Upload a photo of a crop leaf to check for pests or disease.</p>
+
+<div class="alert alert-warning small">
+  ⚠️ Demo mode: this uses a simplified image-analysis heuristic for
+  demonstration, not a fully trained deep learning model. See
+  <code>pest_detection.py</code> comments for how to plug in a real
+  PlantVillage-trained CNN model.
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST" enctype="multipart/form-data">
+        <label class="form-label">Upload Leaf Image</label>
+        <input type="file" name="leaf_image" class="form-control mb-3" accept="image/*" required>
+        <button type="submit" class="btn btn-sfa-primary w-100">Analyze Image</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if result %}
+    <div class="card sfa-card p-4">
+      {% if uploaded_image_url %}
+      <img src="{{ uploaded_image_url }}" alt="Uploaded leaf" class="img-fluid rounded mb-3" style="max-height:220px; object-fit:cover;">
+      {% endif %}
+      <h6 class="text-muted">Detected Condition</h6>
+      <h4 class="fw-bold" style="color: var(--sfa-green);">{{ result.condition }}</h4>
+      <p><strong>Severity:</strong> {{ result.severity }} &nbsp;|&nbsp; <strong>Confidence:</strong> {{ result.confidence }}%</p>
+      <hr>
+      <h6 class="fw-bold">Recommended Action</h6>
+      <p class="mb-0">{{ result.advice }}</p>
+    </div>
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Upload an image to see detection results.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

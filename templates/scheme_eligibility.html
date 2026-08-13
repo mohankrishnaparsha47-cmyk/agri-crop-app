@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Check Scheme Eligibility{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">✅ Check My Scheme Eligibility</h4>
+<p class="text-muted">Fill your details to see which government schemes you're likely eligible for.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Land Holding (acres)</label>
+          <input type="number" step="0.1" name="land_holding_acres" class="form-control"
+                 value="{{ user['land_holding_acres'] if user else '' }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <select name="category" class="form-select">
+            <option value="General" {% if user and user['category']=='General' %}selected{% endif %}>General</option>
+            <option value="SC" {% if user and user['category']=='SC' %}selected{% endif %}>SC</option>
+            <option value="ST" {% if user and user['category']=='ST' %}selected{% endif %}>ST</option>
+            <option value="OBC" {% if user and user['category']=='OBC' %}selected{% endif %}>OBC</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">State</label>
+          <input type="text" name="state" class="form-control"
+                 value="{{ user['state'] if user else 'Telangana' }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Age</label>
+          <input type="number" name="age" class="form-control" placeholder="Optional">
+        </div>
+        <button type="submit" class="btn btn-sfa-primary w-100">Check Eligibility</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if eligible_schemes is not none %}
+      {% if eligible_schemes %}
+      <h6 class="fw-bold mb-3">You are likely eligible for {{ eligible_schemes|length }} scheme(s):</h6>
+      {% for s in eligible_schemes %}
+      <div class="card sfa-card p-3 mb-2">
+        <div class="d-flex justify-content-between align-items-start">
+          <h6 class="fw-bold mb-1">{{ s.name }}</h6>
+          {% if s.level == 'Central' %}
+          <span class="badge scheme-badge-central text-white">Central</span>
+          {% else %}
+          <span class="badge scheme-badge-state text-white">Telangana</span>
+          {% endif %}
+        </div>
+        <p class="small text-muted mb-2">{{ s.benefit }}</p>
+        <form method="POST" action="{{ url_for('apply_scheme', scheme_id=s.id) }}">
+          <button type="submit" class="btn btn-sm btn-sfa-primary">Apply Now</button>
+        </form>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="card sfa-card p-4 text-center text-muted">
+        <p class="mb-0">No matching schemes found based on entered details. Try adjusting your inputs.</p>
+      </div>
+      {% endif %}
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Fill the form to check which schemes you qualify for.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

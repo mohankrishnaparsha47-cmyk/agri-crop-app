@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Fertilizer Recommendations{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">🧪 Fertilizer Recommendations</h4>
+<p class="text-muted">Select your crop and soil type to get the right fertilizer.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Crop</label>
+          <select name="crop" class="form-select" required>
+            <option value="">-- Select Crop --</option>
+            {% for crop in crops %}
+            <option value="{{ crop }}">{{ crop | capitalize }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Soil Type</label>
+          <select name="soil" class="form-select" required>
+            <option value="">-- Select Soil Type --</option>
+            {% for soil in soils %}
+            <option value="{{ soil }}">{{ soil }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-sfa-primary w-100">Get Recommendation</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if result %}
+    <div class="card sfa-card p-4">
+      <h6 class="text-muted">Recommendation for <span class="text-capitalize fw-bold">{{ result.crop }}</span> ({{ result.soil }} Soil)</h6>
+      <table class="table table-sfa mt-3">
+        <tr><th>Nitrogen Level</th><td>{{ result.nitrogen_level }}</td></tr>
+        <tr><th>Phosphorus Level</th><td>{{ result.phosphorus_level }}</td></tr>
+        <tr><th>Potassium Level</th><td>{{ result.potassium_level }}</td></tr>
+        <tr><th>Recommended Fertilizer</th><td class="fw-bold" style="color: var(--sfa-green);">{{ result.fertilizer }}</td></tr>
+      </table>
+    </div>
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Select crop &amp; soil type to see fertilizer recommendation.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

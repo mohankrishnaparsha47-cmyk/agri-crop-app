@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}My Applications{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">📄 My Scheme Applications</h4>
+
+<div class="card sfa-card p-4">
+  {% if applications %}
+  <table class="table table-sfa">
+    <thead><tr><th>Scheme</th><th>Applied On</th><th>Status</th></tr></thead>
+    <tbody>
+      {% for a in applications %}
+      <tr>
+        <td>{{ a['scheme_name'] }}</td>
+        <td>{{ a['applied_on'] }}</td>
+        <td>
+          {% if a['status'] == 'Approved' %}
+          <span class="badge bg-success">{{ a['status'] }}</span>
+          {% elif a['status'] == 'Rejected' %}
+          <span class="badge bg-danger">{{ a['status'] }}</span>
+          {% else %}
+          <span class="badge bg-warning text-dark">{{ a['status'] }}</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-muted mb-0">You haven't applied for any schemes yet. <a href="{{ url_for('schemes') }}">Browse schemes</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}

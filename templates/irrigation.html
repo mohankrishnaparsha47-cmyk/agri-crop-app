@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Irrigation Alerts{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">💧 Irrigation Alerts</h4>
+<p class="text-muted">Select your crop to see the recommended irrigation schedule by growth stage.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Crop</label>
+          <select name="crop" class="form-select" required>
+            <option value="">-- Select Crop --</option>
+            {% for crop in crops %}
+            <option value="{{ crop }}">{{ crop | capitalize }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" name="send_sms" id="sendSms">
+          <label class="form-check-label" for="sendSms">📩 Send SMS alert to my phone now</label>
+        </div>
+        <button type="submit" class="btn btn-sfa-primary w-100">Get Irrigation Schedule</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if schedule %}
+    <div class="card sfa-card p-4">
+      <h6 class="text-muted mb-3">Irrigation Schedule</h6>
+      <table class="table table-sfa">
+        <thead>
+          <tr><th>Growth Stage</th><th>Water (mm)</th><th>Frequency (days)</th><th>Soil Moisture Alert (%)</th></tr>
+        </thead>
+        <tbody>
+          {% for row in schedule %}
+          <tr>
+            <td>{{ row['Growth_Stage'] }}</td>
+            <td>{{ row['Water_Requirement_mm'] }}</td>
+            <td>Every {{ row['Irrigation_Frequency_Days'] }} days</td>
+            <td>Below {{ row['Soil_Moisture_Alert_Threshold_%'] }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Select a crop to view its irrigation schedule.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

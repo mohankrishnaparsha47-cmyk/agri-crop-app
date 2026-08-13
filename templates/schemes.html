@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Farmer Subsidy & Schemes{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h4 class="fw-bold mb-0">🏛️ Farmer Subsidy &amp; Schemes</h4>
+  <div>
+    <a href="{{ url_for('check_scheme_eligibility') }}" class="btn btn-sfa-primary btn-sm">Check My Eligibility</a>
+    <a href="{{ url_for('my_applications') }}" class="btn btn-outline-success btn-sm">My Applications</a>
+  </div>
+</div>
+<p class="text-muted">Central &amp; Telangana State government schemes for farmers. Tap "Apply" to submit an in-app application.</p>
+
+<div class="row g-3">
+  {% for s in schemes %}
+  <div class="col-md-6">
+    <div class="card sfa-card p-3 h-100">
+      <div class="d-flex justify-content-between align-items-start">
+        <h6 class="fw-bold mb-1">{{ s.name }}</h6>
+        {% if s.level == 'Central' %}
+        <span class="badge scheme-badge-central text-white">Central</span>
+        {% else %}
+        <span class="badge scheme-badge-state text-white">Telangana</span>
+        {% endif %}
+      </div>
+      <p class="text-muted small mb-2">{{ s.description }}</p>
+      <p class="mb-2"><strong>Benefit:</strong> {{ s.benefit }}</p>
+      <div class="d-flex justify-content-between align-items-center mt-auto">
+        <a href="{{ s.official_link }}" target="_blank" class="small">Official Website ↗</a>
+        <form method="POST" action="{{ url_for('apply_scheme', scheme_id=s.id) }}">
+          <button type="submit" class="btn btn-sm btn-sfa-primary">Apply Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

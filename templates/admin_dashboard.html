@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">🛠️ Admin Dashboard</h4>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="card sfa-card p-3 text-center">
+      <h6 class="text-muted">Total Farmers</h6>
+      <h2 class="fw-bold" style="color:var(--sfa-green);">{{ total_users }}</h2>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card sfa-card p-3 text-center">
+      <h6 class="text-muted">Field Records Logged</h6>
+      <h2 class="fw-bold" style="color:var(--sfa-green);">{{ total_records }}</h2>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card sfa-card p-3 text-center">
+      <h6 class="text-muted">Scheme Applications</h6>
+      <h2 class="fw-bold" style="color:var(--sfa-green);">{{ total_applications }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="card sfa-card p-4 mb-4">
+  <h6 class="fw-bold mb-3">Recent Farmers</h6>
+  <div class="table-responsive">
+    <table class="table table-sfa">
+      <thead><tr><th>Name</th><th>Phone</th><th>District</th><th>Land (acres)</th><th>Category</th><th>Joined</th></tr></thead>
+      <tbody>
+        {% for u in recent_users %}
+        <tr>
+          <td>{{ u['name'] }}</td><td>{{ u['phone'] }}</td><td>{{ u['district'] }}</td>
+          <td>{{ u['land_holding_acres'] }}</td><td>{{ u['category'] }}</td><td>{{ u['created_at'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card sfa-card p-4">
+  <h6 class="fw-bold mb-3">Scheme Applications</h6>
+  <div class="table-responsive">
+    <table class="table table-sfa">
+      <thead><tr><th>Farmer</th><th>Phone</th><th>Scheme</th><th>Applied On</th><th>Status</th><th>Update</th></tr></thead>
+      <tbody>
+        {% for a in applications %}
+        <tr>
+          <td>{{ a['user_name'] }}</td>
+          <td>{{ a['user_phone'] }}</td>
+          <td>{{ a['scheme_name'] }}</td>
+          <td>{{ a['applied_on'] }}</td>
+          <td>
+            {% if a['status'] == 'Approved' %}<span class="badge bg-success">{{ a['status'] }}</span>
+            {% elif a['status'] == 'Rejected' %}<span class="badge bg-danger">{{ a['status'] }}</span>
+            {% else %}<span class="badge bg-warning text-dark">{{ a['status'] }}</span>{% endif %}
+          </td>
+          <td>
+            <form method="POST" action="{{ url_for('update_application_status', app_id=a['id']) }}" class="d-flex gap-1">
+              <select name="status" class="form-select form-select-sm">
+                <option value="Applied" {% if a['status']=='Applied' %}selected{% endif %}>Applied</option>
+                <option value="Under Review" {% if a['status']=='Under Review' %}selected{% endif %}>Under Review</option>
+                <option value="Approved" {% if a['status']=='Approved' %}selected{% endif %}>Approved</option>
+                <option value="Rejected" {% if a['status']=='Rejected' %}selected{% endif %}>Rejected</option>
+              </select>
+              <button type="submit" class="btn btn-sm btn-sfa-primary">Save</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

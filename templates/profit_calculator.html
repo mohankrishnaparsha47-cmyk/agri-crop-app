@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Profit Calculator{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-3">💰 Crop Profit Calculator</h4>
+<p class="text-muted">Estimate your expected profit before investing.</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="card sfa-card p-4">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Crop</label>
+          <select name="crop" class="form-select" required>
+            <option value="">-- Select Crop --</option>
+            {% for crop in crops %}
+            <option value="{{ crop }}">{{ crop | capitalize }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Land (acres)</label>
+          <input type="number" step="0.1" name="land_acres" class="form-control" value="1" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Investment per acre (₹)</label>
+          <input type="number" name="investment_per_acre" class="form-control" placeholder="e.g. 25000" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Expected market price per quintal (₹)</label>
+          <input type="number" name="market_price" class="form-control" placeholder="e.g. 2000" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Custom yield per acre (quintals) <small class="text-muted">optional</small></label>
+          <input type="number" step="0.1" name="custom_yield" class="form-control" placeholder="Leave blank to use typical average">
+        </div>
+        <button type="submit" class="btn btn-sfa-primary w-100">Calculate Profit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    {% if result %}
+    <div class="card sfa-card p-4">
+      <h6 class="text-muted">Estimate for <span class="fw-bold">{{ result.crop }}</span> ({{ result.land_acres }} acres)</h6>
+      <table class="table table-sfa mt-3">
+        <tr><th>Yield per acre</th><td>{{ result.yield_per_acre_quintals }} quintals</td></tr>
+        <tr><th>Total yield</th><td>{{ result.total_yield_quintals }} quintals</td></tr>
+        <tr><th>Total investment</th><td>₹{{ result.total_investment }}</td></tr>
+        <tr><th>Total revenue</th><td>₹{{ result.total_revenue }}</td></tr>
+        <tr>
+          <th>Net Profit</th>
+          <td class="fw-bold {{ 'text-success' if result.is_profitable else 'text-danger' }}">
+            ₹{{ result.net_profit }}
+          </td>
+        </tr>
+        <tr><th>ROI</th><td>{{ result.roi_pct }}%</td></tr>
+      </table>
+      {% if result.is_profitable %}
+      <div class="alert alert-success mb-0">✅ This crop looks profitable based on your inputs.</div>
+      {% else %}
+      <div class="alert alert-danger mb-0">⚠️ This crop may run at a loss based on your inputs. Consider adjusting investment or checking current market prices.</div>
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="card sfa-card p-4 text-center text-muted">
+      <p class="mb-0">Fill the form to see your profit estimate.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
