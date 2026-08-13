@@ -1,0 +1,169 @@
+Crop,Soil_Type,Nitrogen_Level,Phosphorus_Level,Potassium_Level,Recommended_Fertilizer
+rice,Black,Low,High,High,Urea
+rice,Red,High,High,High,Organic Compost / No chemical fertilizer needed
+rice,Sandy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+rice,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+rice,Clayey,High,High,High,Organic Compost / No chemical fertilizer needed
+rice,Alluvial,Low,High,High,Urea
+maize,Black,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+maize,Red,Low,Low,High,Urea + DAP
+maize,Sandy,Low,Low,High,Urea + DAP
+maize,Loamy,Low,High,Low,Urea + MOP
+maize,Clayey,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+maize,Alluvial,Low,High,High,Urea
+chickpea,Black,High,Low,High,DAP
+chickpea,Red,Low,High,High,Urea
+chickpea,Sandy,High,Low,Low,DAP + MOP
+chickpea,Loamy,High,Low,High,DAP
+chickpea,Clayey,Low,High,Low,Urea + MOP
+chickpea,Alluvial,Low,High,High,Urea
+kidneybeans,Black,Low,High,Low,Urea + MOP
+kidneybeans,Red,High,High,Low,MOP
+kidneybeans,Sandy,High,Low,High,DAP
+kidneybeans,Loamy,Low,High,High,Urea
+kidneybeans,Clayey,Low,High,Low,Urea + MOP
+kidneybeans,Alluvial,High,Low,High,DAP
+pigeonpeas,Black,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+pigeonpeas,Red,High,Low,High,DAP
+pigeonpeas,Sandy,Low,High,Low,Urea + MOP
+pigeonpeas,Loamy,Low,High,Low,Urea + MOP
+pigeonpeas,Clayey,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+pigeonpeas,Alluvial,High,Low,High,DAP
+mothbeans,Black,High,Low,Low,DAP + MOP
+mothbeans,Red,Low,Low,High,Urea + DAP
+mothbeans,Sandy,High,Low,Low,DAP + MOP
+mothbeans,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+mothbeans,Clayey,Low,Low,High,Urea + DAP
+mothbeans,Alluvial,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+mungbean,Black,Low,High,Low,Urea + MOP
+mungbean,Red,Low,Low,High,Urea + DAP
+mungbean,Sandy,High,Low,High,DAP
+mungbean,Loamy,High,High,Low,MOP
+mungbean,Clayey,Low,Low,High,Urea + DAP
+mungbean,Alluvial,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+blackgram,Black,Low,High,Low,Urea + MOP
+blackgram,Red,High,Low,Low,DAP + MOP
+blackgram,Sandy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+blackgram,Loamy,High,High,Low,MOP
+blackgram,Clayey,High,High,Low,MOP
+blackgram,Alluvial,High,Low,High,DAP
+lentil,Black,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+lentil,Red,Low,High,High,Urea
+lentil,Sandy,Low,High,Low,Urea + MOP
+lentil,Loamy,High,Low,Low,DAP + MOP
+lentil,Clayey,Low,Low,High,Urea + DAP
+lentil,Alluvial,High,Low,High,DAP
+pomegranate,Black,Low,High,High,Urea
+pomegranate,Red,High,Low,High,DAP
+pomegranate,Sandy,High,High,High,Organic Compost / No chemical fertilizer needed
+pomegranate,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+pomegranate,Clayey,Low,High,Low,Urea + MOP
+pomegranate,Alluvial,High,High,High,Organic Compost / No chemical fertilizer needed
+banana,Black,Low,Low,High,Urea + DAP
+banana,Red,High,Low,Low,DAP + MOP
+banana,Sandy,High,Low,Low,DAP + MOP
+banana,Loamy,High,High,High,Organic Compost / No chemical fertilizer needed
+banana,Clayey,High,High,High,Organic Compost / No chemical fertilizer needed
+banana,Alluvial,High,High,Low,MOP
+mango,Black,Low,High,High,Urea
+mango,Red,High,High,Low,MOP
+mango,Sandy,High,Low,High,DAP
+mango,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+mango,Clayey,High,Low,Low,DAP + MOP
+mango,Alluvial,Low,High,High,Urea
+grapes,Black,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+grapes,Red,High,High,Low,MOP
+grapes,Sandy,High,High,Low,MOP
+grapes,Loamy,High,Low,Low,DAP + MOP
+grapes,Clayey,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+grapes,Alluvial,Low,Low,High,Urea + DAP
+watermelon,Black,Low,High,High,Urea
+watermelon,Red,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+watermelon,Sandy,High,Low,Low,DAP + MOP
+watermelon,Loamy,Low,High,Low,Urea + MOP
+watermelon,Clayey,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+watermelon,Alluvial,Low,High,Low,Urea + MOP
+muskmelon,Black,Low,High,Low,Urea + MOP
+muskmelon,Red,High,High,High,Organic Compost / No chemical fertilizer needed
+muskmelon,Sandy,High,High,Low,MOP
+muskmelon,Loamy,High,Low,Low,DAP + MOP
+muskmelon,Clayey,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+muskmelon,Alluvial,Low,Low,High,Urea + DAP
+apple,Black,High,High,High,Organic Compost / No chemical fertilizer needed
+apple,Red,High,Low,High,DAP
+apple,Sandy,Low,High,Low,Urea + MOP
+apple,Loamy,High,Low,Low,DAP + MOP
+apple,Clayey,High,Low,Low,DAP + MOP
+apple,Alluvial,High,Low,Low,DAP + MOP
+orange,Black,High,High,High,Organic Compost / No chemical fertilizer needed
+orange,Red,High,High,Low,MOP
+orange,Sandy,Low,High,High,Urea
+orange,Loamy,Low,High,Low,Urea + MOP
+orange,Clayey,Low,Low,High,Urea + DAP
+orange,Alluvial,High,Low,Low,DAP + MOP
+papaya,Black,High,Low,Low,DAP + MOP
+papaya,Red,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+papaya,Sandy,High,Low,Low,DAP + MOP
+papaya,Loamy,Low,Low,High,Urea + DAP
+papaya,Clayey,Low,Low,High,Urea + DAP
+papaya,Alluvial,Low,Low,High,Urea + DAP
+coconut,Black,Low,High,Low,Urea + MOP
+coconut,Red,High,High,High,Organic Compost / No chemical fertilizer needed
+coconut,Sandy,Low,High,High,Urea
+coconut,Loamy,High,Low,Low,DAP + MOP
+coconut,Clayey,High,High,Low,MOP
+coconut,Alluvial,Low,Low,High,Urea + DAP
+cotton,Black,High,Low,High,DAP
+cotton,Red,Low,Low,High,Urea + DAP
+cotton,Sandy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+cotton,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+cotton,Clayey,High,High,Low,MOP
+cotton,Alluvial,High,High,High,Organic Compost / No chemical fertilizer needed
+jute,Black,High,Low,High,DAP
+jute,Red,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+jute,Sandy,Low,High,Low,Urea + MOP
+jute,Loamy,Low,Low,High,Urea + DAP
+jute,Clayey,Low,High,Low,Urea + MOP
+jute,Alluvial,High,High,Low,MOP
+coffee,Black,High,Low,Low,DAP + MOP
+coffee,Red,High,High,High,Organic Compost / No chemical fertilizer needed
+coffee,Sandy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+coffee,Loamy,High,High,High,Organic Compost / No chemical fertilizer needed
+coffee,Clayey,High,High,Low,MOP
+coffee,Alluvial,Low,High,Low,Urea + MOP
+groundnut,Black,High,High,High,Organic Compost / No chemical fertilizer needed
+groundnut,Red,High,Low,High,DAP
+groundnut,Sandy,High,High,High,Organic Compost / No chemical fertilizer needed
+groundnut,Loamy,Low,High,High,Urea
+groundnut,Clayey,High,Low,Low,DAP + MOP
+groundnut,Alluvial,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+sugarcane,Black,Low,High,High,Urea
+sugarcane,Red,Low,High,Low,Urea + MOP
+sugarcane,Sandy,Low,High,High,Urea
+sugarcane,Loamy,Low,High,High,Urea
+sugarcane,Clayey,High,High,Low,MOP
+sugarcane,Alluvial,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+turmeric,Black,High,High,Low,MOP
+turmeric,Red,High,High,Low,MOP
+turmeric,Sandy,High,High,High,Organic Compost / No chemical fertilizer needed
+turmeric,Loamy,Low,High,Low,Urea + MOP
+turmeric,Clayey,High,High,Low,MOP
+turmeric,Alluvial,Low,High,Low,Urea + MOP
+chilli,Black,Low,High,Low,Urea + MOP
+chilli,Red,High,Low,High,DAP
+chilli,Sandy,High,High,Low,MOP
+chilli,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+chilli,Clayey,High,High,High,Organic Compost / No chemical fertilizer needed
+chilli,Alluvial,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+soybean,Black,Low,High,High,Urea
+soybean,Red,Low,High,High,Urea
+soybean,Sandy,High,Low,High,DAP
+soybean,Loamy,Low,Low,Low,Urea + DAP + MOP (Balanced NPK)
+soybean,Clayey,High,High,High,Organic Compost / No chemical fertilizer needed
+soybean,Alluvial,Low,Low,High,Urea + DAP
+wheat,Black,High,High,High,Organic Compost / No chemical fertilizer needed
+wheat,Red,Low,High,High,Urea
+wheat,Sandy,High,Low,Low,DAP + MOP
+wheat,Loamy,Low,Low,High,Urea + DAP
+wheat,Clayey,High,Low,Low,DAP + MOP
+wheat,Alluvial,High,Low,High,DAP

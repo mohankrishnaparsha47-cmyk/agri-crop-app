@@ -1,0 +1,96 @@
+:root {
+  --sfa-green: #2e7d32;
+  --sfa-green-dark: #1b5e20;
+  --sfa-green-light: #e8f5e9;
+  --sfa-brown: #6d4c31;
+  --sfa-blue: #1976d2;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7f2;
+  color: #263238;
+}
+
+.sfa-navbar {
+  background: linear-gradient(90deg, var(--sfa-green-dark), var(--sfa-green));
+}
+
+.sfa-footer {
+  background-color: var(--sfa-green-dark);
+  color: #e8f5e9;
+}
+
+.sfa-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+}
+
+.sfa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.sfa-icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.bg-icon-green { background-color: var(--sfa-green); }
+.bg-icon-blue { background-color: var(--sfa-blue); }
+.bg-icon-brown { background-color: var(--sfa-brown); }
+.bg-icon-purple { background-color: #7b1fa2; }
+.bg-icon-orange { background-color: #ef6c00; }
+.bg-icon-teal { background-color: #00796b; }
+
+.btn-sfa-primary {
+  background-color: var(--sfa-green);
+  border-color: var(--sfa-green);
+  color: #fff;
+}
+.btn-sfa-primary:hover {
+  background-color: var(--sfa-green-dark);
+  border-color: var(--sfa-green-dark);
+  color: #fff;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sfa-green-light), #ffffff);
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border: none;
+}
+
+.dashboard-hero {
+  background: linear-gradient(120deg, var(--sfa-green-dark), var(--sfa-green));
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.scheme-badge-central { background-color: #1976d2; }
+.scheme-badge-state { background-color: #ef6c00; }
+
+.table-sfa thead {
+  background-color: var(--sfa-green-light);
+}

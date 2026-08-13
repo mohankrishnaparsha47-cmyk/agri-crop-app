@@ -1,0 +1,141 @@
+Crop,Growth_Stage,Water_Requirement_mm,Irrigation_Frequency_Days,Soil_Moisture_Alert_Threshold_%
+rice,Sowing/Germination,17.5,4,53.8
+rice,Vegetative,21.2,3,50.2
+rice,Flowering,25.0,2,37.9
+rice,Fruiting/Grain filling,28.7,2,51.7
+rice,Maturity,32.5,2,59.6
+maize,Sowing/Germination,13.3,10,49.2
+maize,Vegetative,16.1,9,47.4
+maize,Flowering,19.0,8,31.1
+maize,Fruiting/Grain filling,21.8,7,52.4
+maize,Maturity,24.7,6,35.6
+chickpea,Sowing/Germination,25.9,5,48.0
+chickpea,Vegetative,31.4,4,36.5
+chickpea,Flowering,37.0,3,36.3
+chickpea,Fruiting/Grain filling,42.5,2,35.7
+chickpea,Maturity,48.1,2,50.4
+kidneybeans,Sowing/Germination,10.5,8,54.4
+kidneybeans,Vegetative,12.8,7,30.5
+kidneybeans,Flowering,15.0,6,56.9
+kidneybeans,Fruiting/Grain filling,17.2,5,45.1
+kidneybeans,Maturity,19.5,4,56.0
+pigeonpeas,Sowing/Germination,25.9,10,49.5
+pigeonpeas,Vegetative,31.4,9,43.7
+pigeonpeas,Flowering,37.0,8,42.3
+pigeonpeas,Fruiting/Grain filling,42.5,7,40.6
+pigeonpeas,Maturity,48.1,6,46.3
+mothbeans,Sowing/Germination,21.7,8,33.4
+mothbeans,Vegetative,26.3,7,35.3
+mothbeans,Flowering,31.0,6,42.9
+mothbeans,Fruiting/Grain filling,35.6,5,35.3
+mothbeans,Maturity,40.3,4,47.8
+mungbean,Sowing/Germination,22.4,9,41.4
+mungbean,Vegetative,27.2,8,55.4
+mungbean,Flowering,32.0,7,50.7
+mungbean,Fruiting/Grain filling,36.8,6,43.1
+mungbean,Maturity,41.6,5,38.5
+blackgram,Sowing/Germination,23.8,4,59.9
+blackgram,Vegetative,28.9,3,54.2
+blackgram,Flowering,34.0,2,33.1
+blackgram,Fruiting/Grain filling,39.1,2,49.5
+blackgram,Maturity,44.2,2,48.5
+lentil,Sowing/Germination,19.6,4,44.9
+lentil,Vegetative,23.8,3,52.6
+lentil,Flowering,28.0,2,57.8
+lentil,Fruiting/Grain filling,32.2,2,33.0
+lentil,Maturity,36.4,2,43.3
+pomegranate,Sowing/Germination,23.1,3,50.0
+pomegranate,Vegetative,28.1,2,55.6
+pomegranate,Flowering,33.0,2,36.4
+pomegranate,Fruiting/Grain filling,37.9,2,53.3
+pomegranate,Maturity,42.9,2,46.5
+banana,Sowing/Germination,12.6,6,55.7
+banana,Vegetative,15.3,5,58.5
+banana,Flowering,18.0,4,40.5
+banana,Fruiting/Grain filling,20.7,3,53.8
+banana,Maturity,23.4,2,43.9
+mango,Sowing/Germination,24.5,9,30.2
+mango,Vegetative,29.8,8,41.2
+mango,Flowering,35.0,7,36.7
+mango,Fruiting/Grain filling,40.2,6,38.5
+mango,Maturity,45.5,5,56.4
+grapes,Sowing/Germination,16.1,7,55.2
+grapes,Vegetative,19.6,6,53.9
+grapes,Flowering,23.0,5,42.4
+grapes,Fruiting/Grain filling,26.4,4,37.2
+grapes,Maturity,29.9,3,57.0
+watermelon,Sowing/Germination,19.6,3,30.5
+watermelon,Vegetative,23.8,2,34.6
+watermelon,Flowering,28.0,2,41.2
+watermelon,Fruiting/Grain filling,32.2,2,54.5
+watermelon,Maturity,36.4,2,54.6
+muskmelon,Sowing/Germination,23.8,8,40.1
+muskmelon,Vegetative,28.9,7,58.8
+muskmelon,Flowering,34.0,6,59.8
+muskmelon,Fruiting/Grain filling,39.1,5,37.3
+muskmelon,Maturity,44.2,4,59.2
+apple,Sowing/Germination,14.7,9,54.9
+apple,Vegetative,17.8,8,54.0
+apple,Flowering,21.0,7,47.3
+apple,Fruiting/Grain filling,24.1,6,33.9
+apple,Maturity,27.3,5,49.1
+orange,Sowing/Germination,26.6,5,42.1
+orange,Vegetative,32.3,4,39.5
+orange,Flowering,38.0,3,34.8
+orange,Fruiting/Grain filling,43.7,2,36.9
+orange,Maturity,49.4,2,51.3
+papaya,Sowing/Germination,13.3,4,48.9
+papaya,Vegetative,16.1,3,53.5
+papaya,Flowering,19.0,2,55.3
+papaya,Fruiting/Grain filling,21.8,2,48.8
+papaya,Maturity,24.7,2,37.8
+coconut,Sowing/Germination,22.4,5,58.5
+coconut,Vegetative,27.2,4,36.1
+coconut,Flowering,32.0,3,32.8
+coconut,Fruiting/Grain filling,36.8,2,43.1
+coconut,Maturity,41.6,2,48.9
+cotton,Sowing/Germination,23.1,5,30.8
+cotton,Vegetative,28.1,4,51.2
+cotton,Flowering,33.0,3,57.6
+cotton,Fruiting/Grain filling,37.9,2,32.4
+cotton,Maturity,42.9,2,41.5
+jute,Sowing/Germination,26.6,5,59.5
+jute,Vegetative,32.3,4,49.0
+jute,Flowering,38.0,3,53.3
+jute,Fruiting/Grain filling,43.7,2,35.6
+jute,Maturity,49.4,2,49.6
+coffee,Sowing/Germination,15.4,7,35.8
+coffee,Vegetative,18.7,6,55.2
+coffee,Flowering,22.0,5,51.8
+coffee,Fruiting/Grain filling,25.3,4,54.2
+coffee,Maturity,28.6,3,41.3
+groundnut,Sowing/Germination,16.1,3,38.2
+groundnut,Vegetative,19.6,2,58.0
+groundnut,Flowering,23.0,2,48.8
+groundnut,Fruiting/Grain filling,26.4,2,49.2
+groundnut,Maturity,29.9,2,47.4
+sugarcane,Sowing/Germination,12.6,4,43.8
+sugarcane,Vegetative,15.3,3,47.9
+sugarcane,Flowering,18.0,2,33.2
+sugarcane,Fruiting/Grain filling,20.7,2,38.5
+sugarcane,Maturity,23.4,2,56.8
+turmeric,Sowing/Germination,11.9,4,44.8
+turmeric,Vegetative,14.4,3,40.8
+turmeric,Flowering,17.0,2,55.1
+turmeric,Fruiting/Grain filling,19.5,2,41.7
+turmeric,Maturity,22.1,2,44.7
+chilli,Sowing/Germination,10.5,9,32.2
+chilli,Vegetative,12.8,8,58.8
+chilli,Flowering,15.0,7,32.3
+chilli,Fruiting/Grain filling,17.2,6,50.6
+chilli,Maturity,19.5,5,41.3
+soybean,Sowing/Germination,17.5,10,54.3
+soybean,Vegetative,21.2,9,35.4
+soybean,Flowering,25.0,8,30.3
+soybean,Fruiting/Grain filling,28.7,7,35.4
+soybean,Maturity,32.5,6,47.0
+wheat,Sowing/Germination,23.8,3,33.5
+wheat,Vegetative,28.9,2,40.3
+wheat,Flowering,34.0,2,40.4
+wheat,Fruiting/Grain filling,39.1,2,59.8
+wheat,Maturity,44.2,2,48.0
